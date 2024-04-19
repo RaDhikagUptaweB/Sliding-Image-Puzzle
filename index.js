@@ -16,3 +16,24 @@ const isTouchDevice = () => {
     return false;
   }
 };
+const randomNumber = () => Math.floor(Math.random() * 8) + 1;
+//Get row and column value from data-position
+const getCoords = (element) => {
+  const [row, col] = element.getAttribute("data-position").split("_");
+  return [parseInt(row), parseInt(col)];
+};
+//row1, col1 are image co-ordinates while row2 amd col2 are blank image co-ordinates
+const checkAdjacent = (row1, row2, col1, col2) => {
+  if (row1 == row2) {
+    //left/right
+    if (col2 == col1 - 1 || col2 == col1 + 1) {
+      return true;
+    }
+  } else if (col1 == col2) {
+    //up/down
+    if (row2 == row1 - 1 || row2 == row1 + 1) {
+      return true;
+    }
+  }
+  return false;
+};
