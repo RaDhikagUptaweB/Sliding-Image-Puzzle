@@ -111,3 +111,19 @@ const selectImage = (e) => {
     moves.innerText = `Moves: ${movesCount}`;
   }
 };
+//Start button click should display the container
+startButton.addEventListener("click", () => {
+  container.classList.remove("hide");
+  coverScreen.classList.add("hide");
+  container.innerHTML = "";
+  imagesArr = [];
+  randomImages();
+  gridGenerator();
+  movesCount = 0;
+  moves.innerText = `Moves: ${movesCount}`;
+});
+//Display start screen first
+window.onload = () => {
+  coverScreen.classList.remove("hide");
+  container.classList.add("hide");
+};
