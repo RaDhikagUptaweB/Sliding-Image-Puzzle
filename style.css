@@ -59,13 +59,4 @@
     .slider-game {
       flex-direction: column;
     }
-    .container {
-      width: 20em;
-      height: 20em;
-      grid-auto-rows: 6em;
-    }
-    .original-image {
-      width: 20em;
-      height: 20em;
-    }
-  }
+   
